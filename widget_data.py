@@ -8,7 +8,7 @@ def button_func():
     # Update the label
     # label.configure(text='some other text')
     label['text'] = entry_text
-    entry['status'] = 'disabled'
+    entry['state'] = 'disabled'
 
 # Window
 window = tk.Tk()
@@ -25,6 +25,15 @@ entry.pack()
 
 button = ttk.Button( master = window, text='Button', command= button_func)
 button.pack()
+
+
+def reset_func():
+    label['text'] = 'Some text'
+    entry['state'] = 'enabled'
+
+# excercise Button
+exercise_button = ttk.Button(master = window, text='Exercise Button', command=reset_func)
+exercise_button.pack()
  
 # Run
 window.mainloop()
